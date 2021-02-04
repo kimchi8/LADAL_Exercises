@@ -7,6 +7,9 @@ ENV NB_USER rstudio
 ENV NB_UID 1000
 ENV VENV_DIR /srv/venv
 
+ENV PATH ${VENV_DIR}/bin:$PATH
+RUN echo "PATH=${PATH}" >> /usr/local/lib/R/etc/Renviron
+
 ## Copies your repo files into the Docker Container
 USER root
 COPY . ${HOME}
