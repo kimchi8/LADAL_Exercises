@@ -1,0 +1,178 @@
+---
+title: "Getting started with R Exercises"
+learnr::tutorial:
+    progressive: true
+    allow_skip: true
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(gradethis)
+library(dplyr)
+tutorial_options(exercise.checker= gradethis::grade_learnr)
+gradethis::gradethis_setup()
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r cache=FALSE}
+knitr::read_chunk('solution_1.R')
+```
+
+#### **<span style="color: orange;">Exercise 1</span>** {-}
+You can use R like a calculator.  Try typing `2+8` into the **R console**.
+```{r exercise_1, exercise = TRUE}
+
+```
+
+#### **<span style="color: orange;">Exercise 2</span>** {-}
+What command is used to install the tidyverse package in R?    
+```{r exercise_2, exercise = TRUE}
+
+```
+#### **<span style="color: orange;">Exercise 3</span>** {-}
+What command is used to load the tidyverse package in R?    
+```{r exercise_3, exercise = TRUE}
+
+```
+
+#### **<span style="color: orange;">Exercise 4</span>** {-}
+How would you inspect the content of the cells in 4th column, rows 3 to 5 of the icebio data set?
+```{r exercise_4, exercise = TRUE}
+
+```
+
+#### **<span style="color: orange;">Exercise 5</span>** {-}
+Using the table function, how many women are in the data collected between 2002 and 2005?
+```{r exercise_5, exercise = TRUE}
+
+```
+#### **<span style="color: orange;">Exercise 6</span>** {-}
+Using the ftable function, how many men are are from northern Ireland in the data collected between 1990 and 1994?
+```{r exercise_6, exercise = TRUE}
+
+```
+#### **<span style="color: orange;">Exercise 7</span>** {-}
+Using the data called icebio, create a new data set called ICE_Ire_ordered and arrange the data in descending order by the number of words that each speaker has uttered. Who is the speaker (filename) with the highest word count?
+
+```{r exercise_7, exercise = TRUE}
+
+```
+
+#globals
+```{r}
+icebio <- read.delim("https://slcladal.github.io/data/BiodataIceIreland.txt", 
+                      sep = "\t", header = T)
+```
+
+```{r}
+ICE_Ire_ordered <- icebio %>%
+  dplyr::arrange(-word.count)
+```
+
+#check
+```{r exercise_1-check}
+grade_code()
+```
+
+```{r exercise_2-check}
+grade_code()
+```
+
+```{r exercise_3-check}
+grade_code()
+```
+
+```{r exercise_4-check}
+grade_code()
+```
+```{r exercise_5-check}
+grade_code()
+```
+```{r exercise_6-check}
+grade_code()
+```
+
+```{r exercise_7-check}
+grade_code()
+```
+
+
+#hints
+```{r exercise_1-hint-1}
+x + y = 10
+what is x and y? 
+```
+
+```{r exercise_2-hint-1}
+Did you remember to add quotation marks for the package name?
+```
+
+```{r exercise_2-hint-2}
+install.packages("____")
+```
+
+```{r exercise_3-hint-1}
+library(____) 
+```
+
+```{r exercise_4-hint-1}
+icebio[ , ]
+```
+
+```{r exercise_4-hint-2}
+icebio[x:y, z]
+what is x,y and z?
+```
+
+```{r exercise_5-hint-1}
+table(icebio$___, icebio$___)
+fill in the blanks
+```
+
+```{r exercise_5-hint-2}
+table(icebio$date, icebio$sex)
+```
+
+```{r exercise_6-hint-1}
+ftable(icebio$___, icebio$___, icebio$___)
+fill in the blanks
+```
+
+```{r exercise_6-hint-2}
+ftable(icebio$date, icebio$sex, icebio$zone)
+```
+
+```{r exercise_7-hint-1}
+Put this into the console and run code.
+head(ICE_Ire_ordered)
+```
+
+#solutions:
+```{r exercise_1-solution}
+10
+```
+
+```{r exercise_2-solution}
+install.packages("tidyverse")
+```
+
+```{r exercise_3-solution}
+library(tidyverse)
+```
+
+```{r exercise_4-solution,  exercise.reveal_solution = FALSE}
+icebio[3:5, 4]
+```
+
+```{r exercise_5-solution,  exercise.reveal_solution = FALSE}
+table(icebio$date, icebio$sex)
+```
+
+```{r exercise_6-solution,  exercise.reveal_solution = FALSE}
+ftable(icebio$date, icebio$sex, icebio$zone)
+```
+
+```{r exercise_7-solution,  exercise.reveal_solution = FALSE}
+S2A-037$A
+```
