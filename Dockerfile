@@ -1,9 +1,9 @@
 ## Use a tag instead of "latest" for reproducibility
-FROM rocker/binder:3.6.5
+FROM rocker/binder:3.6.0
 RUN R -e "install.packages('gradethis', repos = 'https://github.com/rstudio-education/gradethis')"
 
 ## Declares build arguments
-ARG NB_USER
+ARG NB_USER rstudio
 ARG NB_UID
 
 ## Copies your repo files into the Docker Container
