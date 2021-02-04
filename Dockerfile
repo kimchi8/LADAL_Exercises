@@ -3,8 +3,8 @@ FROM rocker/binder:3.6.3
 RUN R -e "install.packages('gradethis', repos = 'https://github.com/rstudio-education/gradethis')"
 
 ## Declares build arguments
-ARG NB_USER rstudio
-ARG NB_UID
+ENV NB_USER rstudio
+ENV NB_UID 1000
 
 ## Copies your repo files into the Docker Container
 USER root
