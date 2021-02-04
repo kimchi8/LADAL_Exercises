@@ -1,5 +1,5 @@
 ## Use a tag instead of "latest" for reproducibility
-FROM rocker/binder:3.6.0
+FROM rocker/binder:3.6.3
 RUN R -e "install.packages('gradethis', repos = 'https://github.com/rstudio-education/gradethis')"
 
 ## Declares build arguments
