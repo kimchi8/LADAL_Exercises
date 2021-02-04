@@ -5,6 +5,7 @@ RUN R -e "install.packages('gradethis', repos = 'https://github.com/rstudio-educ
 ## Declares build arguments
 ENV NB_USER rstudio
 ENV NB_UID 1000
+ENV VENV_DIR /srv/venv
 
 ## Copies your repo files into the Docker Container
 USER root
