@@ -1,6 +1,7 @@
 FROM rocker/binder:3.6.3
 
 RUN R -e "install.packages('gradethis', repos = 'https://github.com/rstudio-education/gradethis')"
+RUN R -e "install.packages('devtools', repos = 'https://github.com/r-lib/devtools"')"
 
 ## Declares build arguments
 
