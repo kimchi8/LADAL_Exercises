@@ -39,5 +39,5 @@ RUN python3 -m venv ${VENV_DIR} && \
 
 ## Run an install.R script, if it exists.
 
-RUN wget https://github.com/rgayler/scorecal_CSCC_2019/blob/main/install.R
+RUN wget https://github.com/kimchi8/LADAL_Exercises/blob/main/install.R
 ##RUN if [ -f install.R ]; then R --quiet -f install.R; fi
