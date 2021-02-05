@@ -39,5 +39,5 @@ RUN python3 -m venv ${VENV_DIR} && \
 
 ## Run an install.R script, if it exists.
 
-RUN wget https://github.com/kimchi8/LADAL_Exercises/blob/main/install.R && R -e "options(repos = list(CRAN = 'http://mran.revolutionanalytics.com/snapshot/2020-11-10/'))"
-RUN if [ -f install.R ]; then R --quiet -f install.R; fi
+RUN wget https://github.com/kimchi8/LADAL_Exercises/blob/main/install.R && R -e "options(repos = list(CRAN = 'http://mran.revolutionanalytics.com/snapshot/2020-11-10/')); devtools::install_deps()"
+#RUN if [ -f install.R ]; then R --quiet -f install.R; fi
