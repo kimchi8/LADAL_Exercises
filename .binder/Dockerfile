@@ -1,7 +1,6 @@
 FROM rocker/binder:3.6.3
 
 RUN R -e "install.packages('gradethis', repos = 'https://github.com/rstudio-education/gradethis')"
-RUN R -e "install.packages('devtools', repos = 'https://github.com/r-lib/devtools')"
 
 ## Declares build arguments
 
@@ -40,6 +39,5 @@ RUN python3 -m venv ${VENV_DIR} && \
 
 ## Run an install.R script, if it exists.
 
-RUN wget https://github.com/kimchi8/LADAL_Exercises/blob/main/install.R && \
-R -e "devtools::install_deps()"
+RUN wget https://github.com/kimchi8/LADAL_Exercises/blob/main/install.R 
 #RUN if [ -f install.R ]; then R --quiet -f install.R; fi
