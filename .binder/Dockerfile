@@ -1,7 +1,5 @@
 FROM rocker/binder:3.6.3
 
-RUN R -e "install.packages('gradethis', repos = 'https://github.com/rstudio-education/gradethis')"
-
 ## Declares build arguments
 
 ARG NB_USER
