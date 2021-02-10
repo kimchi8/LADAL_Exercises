@@ -1,14 +1,12 @@
 Type: Compendium
-Package: Your compendium name
-Title: What the Package Does (One Line, Title Case)
+Title: Binder DESCRIPTION Template 
 Version: 0.0.1
-Authors@R: 
+Authors@R: person
     person(given = "First",
            family = "Last",
            role = c("aut", "cre"),
            email = "first.last@example.com")
-Description: Your compendium description
-License: What license it uses
+Description: Suitable for leading RStudio version 3.6.3 on Binder.
 Depends: 
     dplyr,
     gradethis,
